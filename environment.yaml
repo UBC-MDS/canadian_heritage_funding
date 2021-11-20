@@ -1,4 +1,4 @@
-name: '571'
+name: 'Cdn_heritage_funding'
 channels:
   - pytorch
   - conda-forge
@@ -184,4 +184,4 @@ dependencies:
     - imageio==2.9.0
     - mglearn==0.1.9
     - psutil==5.8.0
-prefix: C:\Users\artan\miniconda3\envs\571
+
