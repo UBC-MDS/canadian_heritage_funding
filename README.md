@@ -29,10 +29,8 @@ xxx
 ## License
 xxx
 ## References
-anada, The Department of Canadian Heritage, Data on funding provided in 2016-2017 and 2017-2018 by the Canada Arts Presentation Fund, Canadian Heritage, 2018, https://open.canada.ca/data/en/dataset/92984c11-6fd4-40c4-b23c-e8832e1f4cd5/resource/148841f0-11c9-4f45-8700-d0a4717dea2f
+Canada, The Department of Canadian Heritage, Data on funding provided in 2016-2017 and 2017-2018 by the Canada Arts Presentation Fund, Canadian Heritage, 2018, https://open.canada.ca/data/en/dataset/92984c11-6fd4-40c4-b23c-e8832e1f4cd5/resource/148841f0-11c9-4f45-8700-d0a4717dea2f
 
 Canada, Evaluation Services Directorate, Grouped Arts Evaluation: Canada Arts Presentation Fund, Canada Cultural Spaces Fund, and Canada Cultural Investment Fund 2013-14 to 2017-18, 2019, https://www.canada.ca/en/canadian-heritage/corporate/publications/evaluations/grouped-art-evaluation.html#a1 
 
 Santini, Lauryn. “Public Funding of the Visual Arts in Canada: Keeping Creativity at an Arm’s Length.” UMI Dissertations Publishing, 2013. https://www.proquest.com/openview/5dcc1a8c4f06559c3793ba03335019d2 
-
-
