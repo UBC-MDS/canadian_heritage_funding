@@ -17,15 +17,13 @@ New code should follow the [Numpy](https://numpydoc.readthedocs.io/en/latest/for
 >Once your local environment is up-to-date, you can create a new git branch which will contain your contribution:  
 >```$ git checkout -b <branch-name>```
 
->With this branch checked-out, make the desired changes to the package. Note that our code uses the black code formatter, which you can apply to your modifications by installing and running black on the local directory:
->```
-$ pip install black
-$ black .
+>With this branch checked-out, make the desired changes to the package. Note that our code uses the black code formatter, which you can apply to your modifications by installing and running black on the local directory:  
+>```$ pip install black```  
+>```$ black .```
 
->When you are happy with your changes, you can commit them to your branch by running
->```
-$ git add <modified-file>
-$ git commit -m "Some descriptive message about your change"
+>When you are happy with your changes, you can commit them to your branch by running  
+>```$ git add <modified-file>```  
+>```$ git commit -m "Some descriptive message about your change"```
 
 ## Code of Conduct  
 Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms.
