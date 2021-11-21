@@ -26,13 +26,14 @@ We plan to first preprocess the categorical features (the region, disciplines, e
 After identifying the best-performing model with optimized hyperparameters, we will re-fit the model on the training data set and evaluate the model on the test data. We will answer our sub-question whether those features non-indicative of artistic merit (location and discipline etc.) can make reasonable predictions on the funding size approved by the the Canada Arts Presentation Fund by examining how well the model can generalize. To achieve this end, we will evaluate our best model by looking at the test scores, including overall accuracy, misclassification errors and macro f1 score. The scores will be presented in a table. We will also plot a confusion matrix for misclassification errors in our final report. 
 ## Dependencies
 A complete list of dependencies is available [here](https://github.com/UBC-MDS/canadian_heritage_funding/blob/main/environment.yaml).
-Python 3.9.7 and Python packages:
-docopt==0.6.1
-pandas==1.3.3
-numpy==1.21.2
-altair_saver=0.5.0
-altair=4.1.0
-scikit-learn=1.0
+<br>
+<br>Python 3.9.7 and Python packages:
+<br>docopt==0.6.1
+<br>pandas==1.3.3
+<br>numpy==1.21.2
+<br>altair_saver=0.5.0
+<br>altair=4.1.0
+<br>scikit-learn=1.0
 ## License
 All Open Government data - Canada is made available under the Open Government License Canada. For a summary of the license see [here](https://github.com/UBC-MDS/canadian_heritage_funding/blob/main/LICENSE.md). If reusing please provide attribution and link to this webpage.
 ## References
