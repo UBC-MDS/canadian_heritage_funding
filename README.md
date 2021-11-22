@@ -34,6 +34,10 @@ A complete list of dependencies is available [here](https://github.com/UBC-MDS/c
 <br>altair_saver=0.5.0
 <br>altair=4.1.0
 <br>scikit-learn=1.0
+
+## Usage
+```$ python src/download_data.py --url=https://open.canada.ca/data/dataset/92984c11-6fd4-40c4-b23c-e8832e1f4cd5/resource/148841f0-11c9-4f45-8700-d0a4717dea2f/download/capf_en.csv --file_path=data/capf_en.csv```
+
 ## License
 All Open Government data - Canada is made available under the Open Government License Canada. For a summary of the license see [here](https://github.com/UBC-MDS/canadian_heritage_funding/blob/main/LICENSE.md). If reusing please provide attribution and link to this webpage.
 ## References

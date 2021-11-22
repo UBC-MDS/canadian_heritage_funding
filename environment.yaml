@@ -1,4 +1,4 @@
-name: 'Cdn_heritage_funding'
+name: Cdn_heritage_funding
 channels:
   - pytorch
   - conda-forge
@@ -18,7 +18,7 @@ dependencies:
   - brotlipy=0.7.0=py39hb82d6ee_1001
   - ca-certificates=2021.10.8=h5b45459_0
   - cairo=1.16.0=hb19e0ff_1008
-  - certifi=2021.10.8=py39hcbf5309_0
+  - certifi=2021.10.8=py39hcbf5309_1
   - cffi=1.14.6=py39h0878f49_1
   - chardet=4.0.0=py39hcbf5309_1
   - charset-normalizer=2.0.0=pyhd8ed1ab_0
@@ -28,6 +28,7 @@ dependencies:
   - cycler=0.10.0=py_2
   - debugpy=1.4.1=py39h415ef7b_0
   - decorator=5.1.0=pyhd8ed1ab_0
+  - docopt=0.6.2=py_1
   - entrypoints=0.3=pyhd8ed1ab_1003
   - expat=2.4.1=h39d44d4_0
   - font-ttf-dejavu-sans-mono=2.37=hab24e00_0
@@ -184,4 +185,4 @@ dependencies:
     - imageio==2.9.0
     - mglearn==0.1.9
     - psutil==5.8.0
-
+prefix: C:\Users\artan\miniconda3\envs\Cdn_heritage_funding

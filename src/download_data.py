@@ -1,4 +1,4 @@
-# author: Joyce Wang
+# authors: Joyce Wang, Amelia Tang, Wenxin Xiang, Artan Zandian
 # date: 2021-11-18
 
 """Downloads a csv file from an url.
@@ -10,14 +10,20 @@ Options:
 --file_path=<file_path>      File path (including file name with extension) to store the file
 """
 
+import os
 import requests
 from docopt import docopt
 
 opt = docopt(__doc__)
 
+
 def main(url, file_path):
-    r = requests.get(url)
-    open(file_path, "wb").write(r.content)
+    data = requests.get(url)
+    try:
+        open(file_path, "wb").write(data.content)
+    except:
+        os.makedirs(os.path.dirname(file_path))
+        open(file_path, "wb").write(data.content)
 
 
 if __name__ == "__main__":
