@@ -21,10 +21,22 @@ opt = docopt(__doc__)
 
 
 def main(data, train, test):
+    """
+    Perform train_test_split on data. Train portion is 80%,
+    test portion is 20%. Output to csv file
+
+    Parameters
+    ----------
+    data : dataframe
+        data to split
+    train : str
+        file path to output the train split
+    test : str
+        file path to output the test split
+    """
     data = pd.read_csv(data, encoding="ISO-8859-1")
     train_df, test_df = train_test_split(data, test_size=0.20, random_state=1233)
     try:
-        
         train_df.to_csv(train, index=False)
     except:
         os.makedirs(os.path.dirname(train))

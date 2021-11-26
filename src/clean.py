@@ -20,6 +20,17 @@ opt = docopt(__doc__)
 
 
 def main(data, output):
+    """
+    Main function which reads data file, call data cleaning and transforming 
+    functions, and writes to file
+
+    Parameters
+    ----------
+    data : str
+        file path to data
+    output : str
+        file path for output file
+    """
     try:
         data = pd.read_csv(data, encoding="ISO-8859-1")
         data = clean_data(data)
@@ -34,6 +45,19 @@ def main(data, output):
 
 
 def clean_data(data):
+    """
+    Clean up column names and dirty data values
+
+    Parameters
+    ----------
+    data : dataframe
+        data to clean up
+
+    Returns
+    -------
+    dataframe
+        cleaned data
+    """
     data.columns = data.columns.str.lower().str.replace(" ", "_")
     data = data.rename(columns={"grant_or_contributionution": "grant_or_contribution"})
     data["audiences"] = data["audiences"].str.split(", ", expand=False)
@@ -42,6 +66,20 @@ def clean_data(data):
 
 
 def transform_target_col(data):
+    """
+    Add a new column creating categories for amount_approved 
+    based on quantiles
+
+    Parameters
+    ----------
+    data : dataframe
+        data to transform
+
+    Returns
+    -------
+    dataframe
+        transformed data
+    """
     q10 = data["amount_approved"].quantile(0.1)
     q25 = data["amount_approved"].quantile(0.25)
     q50 = data["amount_approved"].quantile(0.5)
@@ -62,6 +100,23 @@ def transform_target_col(data):
 
 
 def expand_column(data, column):
+    """
+    Expand input column containing list of categories into one
+    new column per category, True for if the original column contains
+    the category and False otherwise
+
+    Parameters
+    ----------
+    data : dataframe
+        data to expand
+    column : str
+        column to expand
+
+    Returns
+    -------
+    dataframe
+        expanded dataframe
+    """
     categories = data.explode(column)[column].unique().tolist()
     for category in categories:
         data[f"{column}_{category}".lower().replace(" ", "_")] = data[column].apply(lambda x: category in x)
