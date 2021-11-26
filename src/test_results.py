@@ -44,7 +44,7 @@ def main(test, out_dir):
 
     # Load and wrangle test data
     test_data = pd.read_csv(test)
-    X_test = test_data.drop(columns=["amount_category"])
+    X_test = test_data.drop(columns=["amount_category", "amount_approved", "audiences_none"])
     y_test = test_data["amount_category"]
     
     # Load model and predict
