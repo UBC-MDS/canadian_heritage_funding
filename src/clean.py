@@ -1,5 +1,5 @@
 # authors: Joyce Wang, Amelia Tang, Wenxin Xiang, Artan Zandian
-# date: 2021-11-18
+# date: 2021-11-25
 
 """Reads data csv file, perform data cleaning, and then add a new
 column as the prediction target
@@ -54,7 +54,7 @@ def transform_target_col(data):
                 f"less than ${q10/1000}K"]
 
     amount = data["amount_approved"]
-    data["greater_than"] = np.where(amount > q75, labeling[0],
+    data["amount_category"] = np.where(amount > q75, labeling[0],
                                             np.where(amount > q50, labeling[1],
                                                     np.where(amount > q25, labeling[2],
                                                                 np.where(amount > q10, labeling[3], labeling[4]))))
