@@ -31,12 +31,12 @@ def main(data, output):
     output : str
         file path for output file
     """
+    data = pd.read_csv(data, encoding="ISO-8859-1")
+    data = clean_data(data)
+    data = transform_target_col(data)
+    data = expand_column(data, "disciplines")
+    data = expand_column(data, "audiences")
     try:
-        data = pd.read_csv(data, encoding="ISO-8859-1")
-        data = clean_data(data)
-        data = transform_target_col(data)
-        data = expand_column(data, "disciplines")
-        data = expand_column(data, "audiences")
         data.to_csv(output, index=False)
     except:
         os.makedirs(os.path.dirname(output))
