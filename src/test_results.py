@@ -63,5 +63,5 @@ def main(test, out_dir):
     
 
 if __name__ == "__main__":
-    main(opt["--"])
+    main(opt["--test"], opt["--out_dir"])
     
