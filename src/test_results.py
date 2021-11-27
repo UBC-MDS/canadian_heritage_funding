@@ -15,6 +15,7 @@ import numpy as np
 import os
 import string
 import pickle
+from docopt import docopt
 
 from sklearn.compose import make_column_transformer
 from sklearn.ensemble import RandomForestClassifier
@@ -48,18 +49,18 @@ def main(test, out_dir):
     y_test = test_data["amount_category"]
     
     # Load model and predict
-    final_model = pickle.load(open("../results/final_rf_model.pickle", 'rb'))
+    final_model = pickle.load(open("results/final_rf_model.pickle", 'rb'))
     y_predict = final_model.predict(X_test)
     
-    # Assess model accuracy
+    # Assess model performance
     model_quality = pd.DataFrame(classification_report(y_test, y_predict, output_dict=True)).T
     
     # Save model_quality to results
     try:
-        model_quality.to_csv(out_dir, index=False)
+        model_quality.to_csv(out_dir)
     except:
         os.makedirs(os.path.dirname(out_dir))
-        model_quality.to_csv(out_dir, index=False)
+        model_quality.to_csv(out_dir)
     
 
 if __name__ == "__main__":
