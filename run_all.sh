@@ -6,14 +6,19 @@ python src/download_data.py --url=https://open.canada.ca/data/dataset/92984c11-6
 
 # run eda report
 
-
 # clean data
-
+python src/clean.py --data data/raw/capf_en.csv --output data/processed/heritage_clean.csv
 
 # split data
- 
+python src/split_data.py --data data/processed/heritage_clean.csv --train data/processed/heritage_train_unexpanded.csv --test data/processed/heritage_test_unexpanded.csv
 
 # create exploratory data analysis figure and write to file 
+python src/eda_plots.py --data data/processed/heritage_train_unexpanded.csv --table results/target_feature_counts.csv --plot1 results/target_distr_plot.png --plot2 results/funding_year_discipline_plot.png --plot3 results/feature_counts_plot.png
+
+
+# expand columns with list of values
+python src/expand.py --data data/processed/heritage_train_unexpanded.csv --output data/processed/heritage_train.csv
+python src/expand.py --data data/processed/heritage_test_unexpanded.csv --output data/processed/heritage_test.csv
 
 
 # model selection & optimization
