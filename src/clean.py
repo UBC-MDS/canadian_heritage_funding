@@ -34,8 +34,7 @@ def main(data, output):
     data = pd.read_csv(data, encoding="ISO-8859-1")
     data = clean_data(data)
     data = transform_target_col(data)
-    data = expand_column(data, "disciplines")
-    data = expand_column(data, "audiences")
+
     try:
         data.to_csv(output, index=False)
     except:
@@ -60,8 +59,8 @@ def clean_data(data):
     """
     data.columns = data.columns.str.lower().str.replace(" ", "_")
     data = data.rename(columns={"grant_or_contributionution": "grant_or_contribution"})
-    data["audiences"] = data["audiences"].str.split(", ", expand=False)
-    data["disciplines"] = data["disciplines"].str.split(", ", expand=False)
+    # data["audiences"] = data["audiences"].str.split(", ", expand=False)
+    # data["disciplines"] = data["disciplines"].str.split(", ", expand=False)
     return data
 
 
@@ -96,32 +95,6 @@ def transform_target_col(data):
                                             np.where(amount > q50, labeling[1],
                                                     np.where(amount > q25, labeling[2],
                                                                 np.where(amount > q10, labeling[3], labeling[4]))))
-    return data
-
-
-def expand_column(data, column):
-    """
-    Expand input column containing list of categories into one
-    new column per category, True for if the original column contains
-    the category and False otherwise
-
-    Parameters
-    ----------
-    data : dataframe
-        data to expand
-    column : str
-        column to expand
-
-    Returns
-    -------
-    dataframe
-        expanded dataframe
-    """
-    categories = data.explode(column)[column].unique().tolist()
-    for category in categories:
-        data[f"{column}_{category}".lower().replace(" ", "_")] = data[column].apply(lambda x: category in x)
-    data.drop(column, axis=1, inplace=True)
-
     return data
 
 
