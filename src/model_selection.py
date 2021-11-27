@@ -5,7 +5,7 @@
 and then select the results in a csv file. Then, it will run hyperprameter optimization
 on the best model and saves the model in a pickle format
 
-Usage: python src/model_selection.py --data=<data> --models_score=<csv_path> --best_model=<model_path>
+Usage: model_selection.py --data=<data> --models_score=<csv_path> --best_model=<model_path>
 
 Options:
 --data=<data>               file path of the clean train data 
@@ -65,8 +65,8 @@ def main(data, csv_path, model_path):
         columns=["amount_category", "amount_approved", "audiences_none"]
     )
     y_train = train_data["amount_category"]
-
-    # define preprocessor
+    
+    # # define preprocessor
     preprocessor = preprocess(X_train)
 
     # generate model scores
@@ -77,9 +77,10 @@ def main(data, csv_path, model_path):
         os.makedirs(os.path.dirname(csv_path))
         open(csv_path, "wb").write(results.content)
 
-    # tune and save model
+    # # tune and save model
     best_model = tune_model(preprocessor, RandomForestClassifier(), X_train, y_train)
     pickle.dump(best_model, open(model_path, "wb"))
+
 
 
 def preprocess(X_train):
