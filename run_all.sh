@@ -22,7 +22,7 @@ python src/expand.py --data data/processed/heritage_test_unexpanded.csv --output
 
 
 # model selection & optimization
-
+python src/model_selection.py --data=data/processed/heritage_train.csv --models_score=results/model_comparison.csv --best_model=results/final_rf_model.pickle
 
 # test model
 python src/test_results.py --test=data/processed/heritage_test.csv --out_dir=results/test_result.csv
