@@ -24,3 +24,4 @@ python src/model_selection.py --data=data/processed/heritage_train.csv --models_
 python src/test_results.py --test=data/processed/heritage_test.csv --model=results/final_rf_model.pickle --out_dir=results/test_result.csv
 
 # render final report
+Rscript -e "rmarkdown::render('doc/canadian_heritage_funding_report.Rmd', output_format = 'github_document')"
