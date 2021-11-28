@@ -4,8 +4,10 @@ Data analysis project for DSCI 522 (Data Science Workflows); a course in
 the Master of Data Science program at the University of British
 Columbia. 
 
-#### Last updated: Nov 20th, 2021 ## Contributers Artan
-Zandian, Joyce Wang, Amelia Tang, Wenxin Xiang 
+#### Last updated: Nov 20th, 2021 
+
+## Contributers 
+Artan Zandian, Joyce Wang, Amelia Tang, Wenxin Xiang 
 
 ## Introduction For this
 project, we are trying to answer two intriguing questions: given
