@@ -25,7 +25,7 @@ test_score <- read_csv("../results/test_result.csv") |>
 
 # Summary
 
-We attempt to build a multi-class classification model which can use features not indicative of artistic merit, such as location, audience, and discipline to predict the funding size granted by the Canadian Heritage Fund (The Fund). We used four popular algorithms for classification questions, including logistics regression, Naive Bayes, C-Support Vector Classification (SVC) and Random Forest initially. We also used `dummyclassifer` as a base case. Then, we selected Random Forest as the best algorithm for our question based on each model's cross-validation scores. We then further conducted hyperparameter optimization on the Random Forest model. Our model performs reasonably well comparing to the base case `dummyclassifer` with a macro average f-1 score of `r round(test_score$'f1-score'[7], 2)` and a weighted-average f-1 score of `r round(test_score$'f1-score'[8], 2)`. However, we also observed that the model performs worse at classifying funding sizes in range of `$12-23K` and `$23-50K`. Thus, we suggest further study to improve this classification model.    
+We attempt to build a multi-class classification model which can use features not indicative of artistic merit, such as location, audience, and discipline to predict the funding size granted by the Canadian Heritage Fund (The Fund). We used four popular algorithms for classification questions, including logistics regression, Naive Bayes, C-Support Vector Classification (SVC) and Random Forest initially. We also used `dummyclassifer` as a base case. Then, we selected Random Forest as the best algorithm for our question based on each model's cross-validation scores. We then further conducted hyperparameter optimization on the Random Forest model. Our model performs reasonably well comparing to the base case `dummyclassifer` with a macro average f-1 score of `r round(test_score$'f1-score'[7], 2)` and a weighted-average f-1 score of `r round(test_score$'f1-score'[8], 2)`. However, we also observed that the model performs worse at classifying funding sizes in range of `$12-23K` and `$23-50K`comparing to classifying funding sizes of other ranges. Thus, we suggest further study to improve this classification model.    
 
 # Introduction
 
@@ -51,7 +51,8 @@ We look at the distribution of the target, the funding size approved. According 
 
 ```{r target-count, message=FALSE, warning=FALSE, echo=FALSE, fig.cap="Table 1. Count of each funding size. Observed class imbalance", out.width = '100%'}
 target_count <- read_csv("../results/target_feature_counts.csv") |>
-  rename(funding_size = amount_category)
+  rename('Funding Size' = amount_category)
+
 target_count |>
   kbl(caption = "Table 1. Count of each funding size. Observed class imbalance") |>
   kable_styling()
@@ -87,7 +88,7 @@ test_score |>
   kable_styling()
 ```
 
-According to Table 3, the test scores are not ideal but our model performs reasonably well. We can see a macro average recall score of `r round(test_score$recall[7], 2)`, a weighted-average recall score of `r round(test_score$recall[8], 2)` , a macro average f-1 score of `r round(test_score$'f1-score'[7], 2)` and a weighted-average f-1 score of `r round(test_score$'f1-score'[8], 2)`. Comparing to our base case model `dummyclassifer` and our previous models using other algorithms, this model has improved significantly. 
+According to Table 3, the test scores are not ideal but our model performs reasonably well. We can see a macro average recall score of `r round(test_score$recall[7], 2)`, a weighted-average recall score of `r round(test_score$recall[8], 2)` , a macro average f-1 score of `r round(test_score$'f1-score'[7], 2)` and a weighted-average f-1 score of `r round(test_score$'f1-score'[8], 2)`. Comparing to our base case model `dummyclassifer` and our previous models using other algorithms, this model has improved significantly. Although not the best, the features non-indicative of artistic merit included in our study, such as location and discipline, may be used to predict the funding size approved by the Canadian Heritage Fund.   
 
 Further, we observe that the model is better at classifying funding size in the range of `less than $8k`, `$8K-$12K` and `$50K and above`. This may be caused by the class imbalance because we have more funding sizes in range of `$12-23K` and `$23-50K`. We might be able to improve the model by adjusting the target classes to make the distribution more balanced. We might also want to look further into other classifiers such as k-Nearest Neighbors to see if the scores will improve.       
 
