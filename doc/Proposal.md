@@ -12,9 +12,7 @@ Artan Zandian, Joyce Wang, Amelia Tang, Wenxin Xiang
 ## Introduction 
 For this project, we are trying to answer two intriguing questions: given
 information non-indicative of artistic merit, such as location,
-audience, and discipline, what would be the funding size for art
-
-projects related to Canadian heritage? Can we make reasonable
+audience, and discipline, what would be the funding size for art projects related to Canadian heritage? Can we make reasonable
 predictions? The significance of answering the questions lies in our
 unanimous support for preserving Canadian heritage through artistic
 expressions. Amidst controversies over governmental involvements in
@@ -102,7 +100,7 @@ Canada. For a summary of the license see
 [here](https://github.com/UBC-MDS/canadian_heritage_funding/blob/main/LICENSE.md).
 If reusing please provide attribution and link to this webpage. 
 
-##References 
+## References 
 
 Canada, The Department of Canadian Heritage, Data on funding
 provided in 2016-2017 and 2017-2018 by the Canada Arts Presentation
