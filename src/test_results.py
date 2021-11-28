@@ -3,10 +3,11 @@
 
 """Test selected model's accuracy on test data set.
 
-Usage: src/test_results.py  --test=<test> --out_dir=<out_dir>
+Usage: src/test_results.py  --test=<test> --model=<model> --out_dir=<out_dir>
 
 Options:
 --test=<test>         Path and file name to test data
+--model=<model>       Path to the .pickle model
 --out_dir=<out_dir>   Path to directory where the plots should be saved
 """
 
@@ -30,7 +31,7 @@ from sklearn.preprocessing import (
 
 opt = docopt(__doc__)
 
-def main(test, out_dir):
+def main(test, model, out_dir):
     """
     Assess best model's accuracy on test data set.
     Report classification report of weighted_f1 score.
@@ -49,7 +50,7 @@ def main(test, out_dir):
     y_test = test_data["amount_category"]
     
     # Load model and predict
-    final_model = pickle.load(open("results/final_rf_model.pickle", 'rb'))
+    final_model = pickle.load(open(model, 'rb'))
     y_predict = final_model.predict(X_test)
     
     # Assess model performance
@@ -64,5 +65,5 @@ def main(test, out_dir):
     
 
 if __name__ == "__main__":
-    main(opt["--test"], opt["--out_dir"])
+    main(opt["--test"], opt["--model"], opt["--out_dir"])
     

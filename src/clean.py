@@ -84,10 +84,10 @@ def transform_target_col(data):
     q50 = data["amount_approved"].quantile(0.5)
     q75 = data["amount_approved"].quantile(0.75)
 
-    labeling = [f"${q75/1000}K",
-                f"${q50/1000}K",
-                f"${q25/1000}K",
-                f"${q10/1000}K",
+    labeling = [f"over ${q75/1000}K",
+                f"${q50/1000}-{q75/1000}K",
+                f"${q25/1000}-{q50/1000}K",
+                f"${q10/1000}-{q25/1000}K",
                 f"less than ${q10/1000}K"]
 
     amount = data["amount_approved"]

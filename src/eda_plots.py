@@ -22,6 +22,49 @@ from docopt import docopt
 
 opt = docopt(__doc__)
 
+
+def main(data, table_path, plot1_path, plot2_path, plot3_path):
+    """
+    reads data, saves dataframe as csv file and call functions to save
+    plots as png files
+
+    Parameters
+    ----------
+    data : str
+        file path for the data
+    table_path : str
+        file path to save the table
+    plot1_path : str
+        file path to save the plot
+    plot2_path : str
+        file path to save the plot
+    plot3_path : str
+        file path to save the plot
+    """
+    data = pd.read_csv(data, encoding="ISO-8859-1")
+    data["audiences"] = data["audiences"].str.split(", ", expand=False)
+    data["disciplines"] = data["disciplines"].str.split(", ", expand=False)
+    data_expl = data.explode("audiences").explode("disciplines")
+
+
+    distr_table = target_distribution_table(data)
+    plot1 = target_distr_plot(data)
+    plot2 = funding_year_discipline_plot(data_expl)
+    plot3 = feature_counts_plot(data, data_expl)
+
+    # output table
+    try:
+        distr_table.to_csv(table_path, index=True)
+    except:
+        os.makedirs(os.path.dirname(table_path))
+        distr_table.to_csv(table_path, index=True)
+
+    # output plots
+    output_plots(plot1, plot1_path, 4)
+    output_plots(plot2, plot2_path, 4)
+    output_plots(plot3, plot3_path, 4)
+
+
 def target_distribution_table(data):
     """
     generate a dataframe describing count of each category
@@ -62,10 +105,10 @@ def target_distr_plot(data):
     q50 = data["amount_approved"].quantile(0.5)
     q75 = data["amount_approved"].quantile(0.75)
 
-    labeling = [f"${q75/1000}K",
-                f"${q50/1000}K",
-                f"${q25/1000}K",
-                f"${q10/1000}K",
+    labeling = [f"over ${q75/1000}K",
+                f"${q50/1000}-{q75/1000}K",
+                f"${q25/1000}-{q50/1000}K",
+                f"${q10/1000}-{q25/1000}K",
                 f"less than ${q10/1000}K"]
 
     plot =  (
@@ -73,7 +116,7 @@ def target_distr_plot(data):
             alt.X("amount_approved", scale=alt.Scale(domain=(0, 260000)), 
                 bin=alt.Bin(maxbins=200), stack=False, title="Amount approved"),
             alt.Y("count()"),
-            alt.Color("amount_category", sort=labeling, title = "Greater than"))
+            alt.Color("amount_category", sort=labeling, title = "Amount Category"))
         .properties(width=250, height=250)
         .facet("amount_category", columns=3, title="Distribution of approved amount by threshold")
     )
@@ -100,7 +143,7 @@ def funding_year_discipline_plot(data_expl):
         alt.Chart(data_expl).mark_bar().encode(
             alt.Y("disciplines", type="ordinal", title=None),
             alt.X("count()"),
-            alt.Color("amount_category", title="Greater than"))
+            alt.Color("amount_category", title="Amount Category"))
         .properties(width=200, height=150)
         .facet("fiscal_year", columns=1, title="Fixed pooled funding per discipline")
     )
@@ -174,47 +217,6 @@ def output_plots(plot, file_path, scale):
         os.makedirs(os.path.dirname(file_path))
         plot.save(file_path, scale_factor=scale)
 
-
-def main(data, table_path, plot1_path, plot2_path, plot3_path):
-    """
-    reads data, saves dataframe as csv file and call functions to save
-    plots as png files
-
-    Parameters
-    ----------
-    data : str
-        file path for the data
-    table_path : str
-        file path to save the table
-    plot1_path : str
-        file path to save the plot
-    plot2_path : str
-        file path to save the plot
-    plot3_path : str
-        file path to save the plot
-    """
-    data = pd.read_csv(data, encoding="ISO-8859-1")
-    data["audiences"] = data["audiences"].str.split(", ", expand=False)
-    data["disciplines"] = data["disciplines"].str.split(", ", expand=False)
-    data_expl = data.explode("audiences").explode("disciplines")
-
-
-    distr_table = target_distribution_table(data)
-    plot1 = target_distr_plot(data)
-    plot2 = funding_year_discipline_plot(data_expl)
-    plot3 = feature_counts_plot(data, data_expl)
-
-    # output table
-    try:
-        distr_table.to_csv(table_path, index=True)
-    except:
-        os.makedirs(os.path.dirname(table_path))
-        distr_table.to_csv(table_path, index=True)
-
-    # output plots
-    output_plots(plot1, plot1_path, 4)
-    output_plots(plot2, plot2_path, 4)
-    output_plots(plot3, plot3_path, 4)
 
     
 

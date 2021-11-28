@@ -3,11 +3,13 @@
 
 """Reads data csv file, then expand columns with list of values
 
-Usage: clean.py --data=<data> --output=<output>
+Usage: expand.py --train_data=<train_data> --test_data=<test_data> --train_output=<train_output> --test_output=<test_output>
 
 Options:
---data=<data>                file path of the csv file to read
---output=<output>            file path and file name of the output file
+--train_data=<train_data>        file path of the train csv file to read
+--test_data=<test_data>          file path of the test csv file to read
+--train_output=<train_output>    file path and file name of the output file
+--test_output=<test_output>      file path and file name of the output file
 """
 
 import os
@@ -17,31 +19,47 @@ from docopt import docopt
 
 opt = docopt(__doc__)
 
-def main(data, output):
+def main(train_data, test_data, train_output, test_output):
     """
     Main function which reads data file, call data cleaning and transforming 
     functions, and writes to file
 
     Parameters
     ----------
-    data : str
+    train_data : str
         file path to data
-    output : str
+    test_data : str
+        file path to data
+    train_output : str
+        file path for output file
+    test_output : str
         file path for output file
     """
-    data = pd.read_csv(data, encoding="ISO-8859-1")
-    data = expand_column(data, "disciplines")
-    data = expand_column(data, "audiences")
+    train_data = pd.read_csv(train_data, encoding="ISO-8859-1")
+    test_data = pd.read_csv(test_data, encoding="ISO-8859-1")
+    
+    train_data = expand_column(train_data, train_data, "disciplines")
+    train_data = expand_column(train_data, train_data, "audiences")
+    
+    test_data = expand_column(train_data, test_data, "disciplines")
+    test_data = expand_column(train_data, test_data, "audiences")
+    
     try:
-        data.to_csv(output, index=False)
+        train_data.to_csv(train_output, index=False)
     except:
         os.makedirs(os.path.dirname(output))
-        data.to_csv(output, index=False)
+        train_data.to_csv(train_output, index=False)
+    
+    try:
+        test_data.to_csv(test_output, index=False)
+    except:
+        os.makedirs(os.path.dirname(output))
+        test_data.to_csv(test_output, index=False)
 
 
 
 
-def expand_column(data, column):
+def expand_column(data1, data2, column):
     """
     Expand input column containing list of categories into one
     new column per category, True for if the original column contains
@@ -49,7 +67,9 @@ def expand_column(data, column):
 
     Parameters
     ----------
-    data : dataframe
+    data1 : dataframe
+        data to get columns from
+    data2 : dataframe
         data to expand
     column : str
         column to expand
@@ -59,14 +79,14 @@ def expand_column(data, column):
     dataframe
         expanded dataframe
     """
-    data[column] = data[column].str.split(", ", expand=False)
-    categories = data.explode(column)[column].unique().tolist()
+    data2[column] = data2[column].str.split(", ", expand=False)
+    categories = data1.explode(column)[column].unique().tolist()
     for category in categories:
-        data[f"{column}_{category}".lower().replace(" ", "_")] = data[column].apply(lambda x: category in x)
+        data2[f"{column}_{category}".lower().replace(" ", "_")] = data2[column].apply(lambda x: category in x)
 
-    return data
+    return data2
 
 
 
 if __name__ == "__main__":
-    main(opt["--data"], opt["--output"])
+    main(opt["--train_data"], opt["--test_data"], opt["--train_output"], opt["--test_output"])
