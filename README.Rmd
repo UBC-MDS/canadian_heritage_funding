@@ -23,7 +23,7 @@ We attempt to build a multi-class classification model which can use features no
 The data set used in this project is provided by the Department of Canadian Heritage (DCH) available on the Government of Canada’s Open Data website and can be found [here](https://open.canada.ca/data/en/dataset/92984c11-6fd4-40c4-b23c-e8832e1f4cd5)). Each row of the data set represents an art project funded by the Fund and provides the project’s name, location information (community, city, region and province), presenter information (associated organizations, disciplines, festival or series presentations, etc.), grant or contribution, and audience. The size of the funding approved for each art project is reported by the Fund.
 
 ## Report
-The final report can be found [here](https://github.com/UBC-MDS/canadian_heritage_funding/blob/main/doc/canadian_heritage_funding_report.html).
+The final report can be found [here](https://htmlpreview.github.io/?https://github.com/UBC-MDS/canadian_heritage_funding/blob/main/doc/canadian_heritage_funding_report.html).
 
 ## Usage
 

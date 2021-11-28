@@ -35,7 +35,7 @@ art project is reported by the Fund.
 ## Report
 
 The final report can be found
-[here](https://github.com/UBC-MDS/canadian_heritage_funding/blob/main/doc/canadian_heritage_funding_report.html).
+[here](https://htmlpreview.github.io/?https://github.com/UBC-MDS/canadian_heritage_funding/blob/main/doc/canadian_heritage_funding_report.html).
 
 ## Usage
 
