@@ -9,12 +9,10 @@ Columbia.
 ## Contributers 
 Artan Zandian, Joyce Wang, Amelia Tang, Wenxin Xiang 
 
-## Introduction For this
-project, we are trying to answer two intriguing questions: given
+## Introduction 
+For this project, we are trying to answer two intriguing questions: given
 information non-indicative of artistic merit, such as location,
-audience, and discipline, what would be the funding size for art
-
-projects related to Canadian heritage? Can we make reasonable
+audience, and discipline, what would be the funding size for art projects related to Canadian heritage? Can we make reasonable
 predictions? The significance of answering the questions lies in our
 unanimous support for preserving Canadian heritage through artistic
 expressions. Amidst controversies over governmental involvements in
@@ -42,8 +40,8 @@ disciplines, festival or series presentations, etc.), grant or
 contribution, and audience. The size of the funding approved for each
 art project is reported by the Fund.  
 
-## Exploratory Data Analysis To answer the main predictive question on
-funding sizes, we plan to build a predictive multi-class classification
+## Exploratory Data Analysis 
+To answer the main predictive question on funding sizes, we plan to build a predictive multi-class classification
 model. We treat this as a classification problem because we are more
 interested in predicting the overall range of the funding size versus a
 specific dollar amount in our study. To predict the funding size for art
@@ -63,8 +61,8 @@ range of the amount approved to help split them into reasonable classes.
 After understanding the nature of our predicting target, we will divide
 them into different classes for building the multi-class classification
 model.  
-## Predictive Models In our data set, many predicting features are
-categorical and our target, after transformation, will also be
+## Predictive Models 
+In our data set, many predicting features are categorical and our target, after transformation, will also be
 categorical in nature. Therefore, we consider using the following four
 algorithms that are suitable for multi-class classification problems: -
 Decision Trees - k-Nearest Neighbors - Naive Bayes - Random Forest We
@@ -79,8 +77,8 @@ cross-validation. Then, we will tune the hyperparameters of models that
 we believe are worth further exploration. We will present the
 hyperparameter optimization results in a table.  
 
-## Results Reporting After identifying the best-performing model with
-optimized hyperparameters, we will re-fit the model on the training data
+## Results 
+Reporting After identifying the best-performing model with optimized hyperparameters, we will re-fit the model on the training data
 set and evaluate the model on the test data. We will answer our
 sub-question whether those features non-indicative of artistic merit
 (location and discipline etc.) can make reasonable predictions on the
@@ -102,7 +100,7 @@ Canada. For a summary of the license see
 [here](https://github.com/UBC-MDS/canadian_heritage_funding/blob/main/LICENSE.md).
 If reusing please provide attribution and link to this webpage. 
 
-##References 
+## References 
 
 Canada, The Department of Canadian Heritage, Data on funding
 provided in 2016-2017 and 2017-2018 by the Canada Arts Presentation
