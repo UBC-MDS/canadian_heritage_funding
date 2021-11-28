@@ -59,7 +59,7 @@ target_count |>
 ```
 
 ## Analysis
-Other than `fiscal_year`, `region`, `disciplines_other`, and "`organization_name`, all features in the original data set were used to fit the models. Initially, four algorithms, logistics regression, Naive Bayes, C-Support Vector Classification (SVC) and Random Forest were used to build multi-class classification model to classify the sizes of the funding. 
+Other than `fiscal_year`, `region`, `disciplines_other`, and "`organization_name`, all features in the original data set were used to fit the models. Initially, four algorithms, logistics regression, Naive Bayes, Support Vector Classification (SVC) and Random Forest were used to build multi-class classification model to classify the sizes of the funding. 
 
 The Python programming languages [@Python] and the following Python packages were used to perform the analysis: numpy [@2020NumPy-Array], pandas [@mckinney2010data], scikitlearn [@pedregosa2011scikit]. The code used to perform the analysis and create this report can be found here: https://github.com/UBC-MDS/canadian_heritage_funding.
 

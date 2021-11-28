@@ -10,7 +10,7 @@ features not indicative of artistic merit, such as location, audience,
 and discipline to predict the funding size granted by the Canadian
 Heritage Fund (The Fund). We used four popular algorithms for
 classification questions, including logistics regression, Naive Bayes,
-C-Support Vector Classification (SVC) and Random Forest initially. We
+Support Vector Classification (SVC) and Random Forest initially. We
 also used `dummyclassifer` as a base case. Then, we selected Random
 Forest as the best algorithm for our question based on each model’s
 cross-validation scores. We then further conducted hyperparameter
