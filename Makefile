@@ -1,4 +1,3 @@
-# run_all.sh
 # Artan Zandian, Joyce Wang, Amelia Tang, Wenxin Xiang, Nov 2021
 
 # This driver script completes the report on the prediction of 
@@ -44,6 +43,7 @@ results/model_comparison.csv results/test_result.csv results/target_distr_plot.p
 results/funding_year_discipline_plot.png results/feature_counts_plot.png doc/can_heritage_reference.bib
 		Rscript -e "rmarkdown::render('doc/canadian_heritage_funding_report.Rmd', output_format = 'github_document')"
 
+# clean all created files from make all
 clean :
 		rm -rf data/raw/capf_en.csv
 		rm -rf data/processed/heritage_clean.csv
