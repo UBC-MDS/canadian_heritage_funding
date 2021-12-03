@@ -24,11 +24,9 @@ from sklearn.dummy import DummyClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import make_scorer, f1_score, SCORERS
 from sklearn.model_selection import (
     RandomizedSearchCV,
     cross_validate,
-    train_test_split,
 )
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import (
