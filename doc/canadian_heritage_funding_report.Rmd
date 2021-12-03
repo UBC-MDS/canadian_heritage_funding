@@ -7,6 +7,8 @@ output:
     toc: yes
   pdf_document:
     toc: yes
+  github_document:
+    toc: yes
 always_allow_html: yes
 bibliography: can_heritage_reference.bib
 ---

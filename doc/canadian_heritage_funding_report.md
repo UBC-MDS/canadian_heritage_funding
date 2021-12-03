@@ -3,6 +3,14 @@ Canadian Heritage Funding Size for Art Projects
 Artan Zandian, Joyce Wang, Amelia Tang, Wenxin Xiang </br>
 2021/11/27 (updated: 2021-12-03)
 
+-   [Summary](#summary)
+-   [Introduction](#introduction)
+-   [Methods](#methods)
+    -   [Data](#data)
+    -   [Analysis](#analysis)
+-   [Results & Discussion](#results--discussion)
+-   [References](#references)
+
 # Summary
 
 We attempt to build a multiclass classification model which can use
@@ -16,7 +24,7 @@ Forest as the best algorithm for our question based on each model’s
 cross-validation scores. We then further conducted hyperparameter
 optimization on the Random Forest model. Our model performs reasonably
 well comparing to the base case `dummyclassifer` with a macro average
-f-1 score of 0.69 and a weighted-average f-1 score of 0.68. However, we
+f-1 score of 0.7 and a weighted-average f-1 score of 0.69. However, we
 also observed that the model performs worse at classifying funding sizes
 in range of `$12-23K` and `$23-50K`comparing to classifying funding
 sizes of other ranges. Thus, we suggest further study to improve this
@@ -205,7 +213,7 @@ test_f1_weighted
 0.5228910
 </td>
 <td style="text-align:right;">
-0.6191466
+0.6280972
 </td>
 </tr>
 <tr>
@@ -225,7 +233,7 @@ test_recall_weighted
 0.5202511
 </td>
 <td style="text-align:right;">
-0.6215744
+0.6289181
 </td>
 </tr>
 <tr>
@@ -245,7 +253,7 @@ test_precision_weighted
 0.5342833
 </td>
 <td style="text-align:right;">
-0.6289763
+0.6356427
 </td>
 </tr>
 </tbody>
@@ -285,13 +293,13 @@ f1-score
 $12.0-23.0K
 </td>
 <td style="text-align:right;">
-0.5774648
+0.6086957
 </td>
 <td style="text-align:right;">
-0.5857143
+0.6000000
 </td>
 <td style="text-align:right;">
-0.5815603
+0.6043165
 </td>
 </tr>
 <tr>
@@ -299,13 +307,13 @@ $12.0-23.0K
 $23.0-50.0K
 </td>
 <td style="text-align:right;">
-0.5263158
+0.5797101
 </td>
 <td style="text-align:right;">
 0.6349206
 </td>
 <td style="text-align:right;">
-0.5755396
+0.6060606
 </td>
 </tr>
 <tr>
@@ -313,13 +321,13 @@ $23.0-50.0K
 $8.0-12.0K
 </td>
 <td style="text-align:right;">
-0.6744186
+0.7368421
 </td>
 <td style="text-align:right;">
-0.7073171
+0.6829268
 </td>
 <td style="text-align:right;">
-0.6904762
+0.7088608
 </td>
 </tr>
 <tr>
@@ -327,13 +335,13 @@ $8.0-12.0K
 less than $8.0K
 </td>
 <td style="text-align:right;">
-0.8461538
+0.7931034
 </td>
 <td style="text-align:right;">
-0.6666667
+0.6969697
 </td>
 <td style="text-align:right;">
-0.7457627
+0.7419355
 </td>
 </tr>
 <tr>
@@ -341,13 +349,13 @@ less than $8.0K
 over $50.0K
 </td>
 <td style="text-align:right;">
-0.9107143
+0.8059701
 </td>
 <td style="text-align:right;">
-0.7846154
+0.8307692
 </td>
 <td style="text-align:right;">
-0.8429752
+0.8181818
 </td>
 </tr>
 <tr>
@@ -355,13 +363,13 @@ over $50.0K
 accuracy
 </td>
 <td style="text-align:right;">
-0.6727941
+0.6875000
 </td>
 <td style="text-align:right;">
-0.6727941
+0.6875000
 </td>
 <td style="text-align:right;">
-0.6727941
+0.6875000
 </td>
 </tr>
 <tr>
@@ -369,13 +377,13 @@ accuracy
 macro avg
 </td>
 <td style="text-align:right;">
-0.7070135
+0.7048643
 </td>
 <td style="text-align:right;">
-0.6758468
+0.6891173
 </td>
 <td style="text-align:right;">
-0.6872628
+0.6958710
 </td>
 </tr>
 <tr>
@@ -383,13 +391,13 @@ macro avg
 weighted avg
 </td>
 <td style="text-align:right;">
-0.6924673
+0.6908141
 </td>
 <td style="text-align:right;">
-0.6727941
+0.6875000
 </td>
 <td style="text-align:right;">
-0.6789753
+0.6882829
 </td>
 </tr>
 </tbody>
@@ -397,8 +405,8 @@ weighted avg
 
 According to Table 3, the test scores are not ideal but our model
 performs reasonably well. We can see a macro average recall score of
-0.68, a weighted-average recall score of 0.67 , a macro average f-1
-score of 0.69 and a weighted-average f-1 score of 0.68. Comparing to our
+0.69, a weighted-average recall score of 0.69 , a macro average f-1
+score of 0.7 and a weighted-average f-1 score of 0.69. Comparing to our
 base case model `dummyclassifer` and our previous models using other
 algorithms, this model has improved significantly. Although not the
 best, the features non-indicative of artistic merit included in our

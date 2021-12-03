@@ -52,5 +52,6 @@ clean :
 		rm -rf data/processed/heritage_train.csv data/processed/heritage_test.csv
 		rm -rf results/model_comparison.csv results/final_rf_model.pickle
 		rm -rf results/test_result.csv 
-		rm -rf doc/canadian_heritage_funding_report.html 
+		rm -rf doc/canadian_heritage_funding_report.html
+		rm -rf doc/canadian_heritage_funding_report.md 
 		
