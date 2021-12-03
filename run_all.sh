@@ -18,7 +18,7 @@ python src/eda_plots.py --data data/processed/heritage_train_unexpanded.csv --ta
 python src/expand.py --train_data=data/processed/heritage_train_unexpanded.csv --test_data=data/processed/heritage_test_unexpanded.csv --train_output=data/processed/heritage_train.csv --test_output=data/processed/heritage_test.csv
 
 # model selection & optimization
-python src/model_selection.py --data=data/processed/heritage_train.csv --models_score=results/model_comparison.csv --best_model=results/final_rf_model.pickle
+python -W"ignore" src/model_selection.py --data=data/processed/heritage_train.csv --models_score=results/model_comparison.csv --best_model=results/final_rf_model.pickle
 
 # test model
 python src/test_results.py --test=data/processed/heritage_test.csv --model=results/final_rf_model.pickle --out_dir=results/test_result.csv
