@@ -49,6 +49,14 @@ JupyterLab.
 
 `conda install nb_conda_kernels`
 
+If you are a windows user, run the following command inside the newly created environment
+to install vega-lite.
+
+`npm install -g vega vega-cli vega-lite canvas`
+
+For M1 mac users, make sure you are using the `x86` version of conda and not the `arm64` version.
+See [here](https://github.com/conda-forge/miniforge#miniforge3) and [here](https://github.com/mwidjaja1/DSOnMacARM/blob/main/README.md) for more info.
+
 Run the `run_all.sh` at the command line/terminal from the root
 directory of this project with the following command.
 
