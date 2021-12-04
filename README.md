@@ -35,7 +35,7 @@ art project is reported by the Fund.
 ## Report
 
 The final report can be found
-[here](https://htmlpreview.github.io/?https://github.com/UBC-MDS/canadian_heritage_funding/blob/main/doc/canadian_heritage_funding_report.html).
+[here](https://htmlpreview.github.io/?https://github.com/artanzand/canadian_heritage_funding/blob/main/doc/canadian_heritage_funding_report.html).
 
 ## Usage
 
@@ -81,7 +81,7 @@ directory of this project.
     python src/expand.py --train_data=data/processed/heritage_train_unexpanded.csv --test_data=data/processed/heritage_test_unexpanded.csv --train_output=data/processed/heritage_train.csv --test_output=data/processed/heritage_test.csv
 
     # model selection & optimization
-    python src/model_selection.py --data=data/processed/heritage_train.csv --models_score=results/model_comparison.csv --best_model=results/final_rf_model.pickle
+    python -W"ignore" src/model_selection.py --data=data/processed/heritage_train.csv --models_score=results/model_comparison.csv --best_model=results/final_rf_model.pickle
 
     # test model
     python src/test_results.py --test=data/processed/heritage_test.csv --model=results/final_rf_model.pickle --out_dir=results/test_result.csv
