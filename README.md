@@ -18,7 +18,7 @@ optimization on the Random Forest model. Our model performs reasonably
 well comparing to the base case `dummyclassifer` with a macro average
 f-1 score of 0.71 and a weighted-average f-1 score of 0.71. However, we
 also observed that the model performs worse at classifying funding sizes
-in range of `$12-23K` and `$23-50K` comparing to classifying other ranges. Thus, we suggest further study to
+in range of `$12.0-23.0K` and `$23.0-50.0K` comparing to classifying other ranges. Thus, we suggest further study to
 improve this classification model.
 
 The data set used in this project is provided by the Department of
