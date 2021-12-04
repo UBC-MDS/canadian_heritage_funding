@@ -45,7 +45,7 @@ We observed that the `amount_approved` in the original data set is not continuou
 We dropped the feature `fiscal_year` because the distributions for arts in each discipline across funding sizes stayed the same year over year. See the Figure 1 below for detailed distributions: 
 
 ```{r drop-fiscal-year, fig.align = 'center', echo=FALSE, fig.cap="Figure 1. Comparison of the distribution of funding sizes 2016-2017 vs 2017-2018", out.width = '50%'}
-knitr::include_graphics("../results/funding_year_discipline_plot.png")
+knitr::include_graphics("../results/funding_year_discipline_plot.svg")
 ```
 We dropped feature `region` from the original data because there is another feature `province` that is indicate of region already. We also dropped `organization_name` and `disciplines_other` because the features are not informative.   
 
