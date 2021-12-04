@@ -21,8 +21,8 @@ data/processed/heritage_train_unexpanded.csv data/processed/heritage_test_unexpa
 	python src/split_data.py --data data/processed/heritage_clean.csv --train data/processed/heritage_train_unexpanded.csv --test data/processed/heritage_test_unexpanded.csv
 
 # create exploratory data analysis figure and write to file 
-results/target_feature_counts.csv results/target_distr_plot.png results/funding_year_discipline_plot.png results/feature_counts_plot.png : data/processed/heritage_train_unexpanded.csv src/eda_plots.py
-	python src/eda_plots.py --data data/processed/heritage_train_unexpanded.csv --table results/target_feature_counts.csv --plot1 results/target_distr_plot.png --plot2 results/funding_year_discipline_plot.png --plot3 results/feature_counts_plot.png
+results/target_feature_counts.csv results/target_distr_plot.svg results/funding_year_discipline_plot.svg results/feature_counts_plot.svg : data/processed/heritage_train_unexpanded.csv src/eda_plots.py
+	python src/eda_plots.py --data data/processed/heritage_train_unexpanded.csv --table results/target_feature_counts.csv --plot1 results/target_distr_plot.svg --plot2 results/funding_year_discipline_plot.svg --plot3 results/feature_counts_plot.svg
 
 
 # expand columns with list of values
@@ -39,9 +39,12 @@ results/test_result.csv : src/test_results.py data/processed/heritage_test.csv r
 
 # render final report
 doc/canadian_heritage_funding_report.md : doc/canadian_heritage_funding_report.Rmd results/target_feature_counts.csv \
-results/model_comparison.csv results/test_result.csv results/target_distr_plot.png \
-results/funding_year_discipline_plot.png results/feature_counts_plot.png doc/can_heritage_reference.bib
+results/model_comparison.csv results/test_result.csv results/target_distr_plot.svg \
+results/funding_year_discipline_plot.svg results/feature_counts_plot.svg doc/can_heritage_reference.bib
 	Rscript -e "rmarkdown::render('doc/canadian_heritage_funding_report.Rmd', output_format = 'github_document')"
+
+
+
 
 # clean all created files from make all
 clean : clean_download clean_processed clean_eda clean_model clean_results
@@ -53,7 +56,7 @@ clean_processed :
 	rm -rf data/processed/heritage_train_unexpanded.csv data/processed/heritage_test_unexpanded.csv
 	rm -rf data/processed/heritage_train.csv data/processed/heritage_test.csv
 clean_eda :
-	rm -rf results/target_feature_counts.csv results/target_distr_plot.png results/funding_year_discipline_plot.png results/feature_counts_plot.png
+	rm -rf results/target_feature_counts.csv results/target_distr_plot.svg results/funding_year_discipline_plot.svg results/feature_counts_plot.svg
 clean_model :
 	rm -rf results/model_comparison.csv results/final_rf_model.pickle
 clean_results :
