@@ -1,7 +1,7 @@
 Canadian Heritage Funding Size for Art Projects
 ================
 Artan Zandian, Joyce Wang, Amelia Tang, Wenxin Xiang </br>
-2021/11/27 (updated: 2021-12-03)
+2021/11/27 (updated: 2021-12-04)
 
 -   [Summary](#summary)
 -   [Introduction](#introduction)
@@ -24,7 +24,7 @@ Forest as the best algorithm for our question based on each model’s
 cross-validation scores. We then further conducted hyperparameter
 optimization on the Random Forest model. Our model performs reasonably
 well comparing to the base case `dummyclassifer` with a macro average
-f-1 score of 0.7 and a weighted-average f-1 score of 0.69. However, we
+f-1 score of 0.69 and a weighted-average f-1 score of 0.69. However, we
 also observed that the model performs worse at classifying funding sizes
 in range of `$12-23K` and `$23-50K`comparing to classifying funding
 sizes of other ranges. Thus, we suggest further study to improve this
@@ -82,7 +82,7 @@ We dropped the feature `fiscal_year` because the distributions for arts
 in each discipline across funding sizes stayed the same year over year.
 See the Figure 1 below for detailed distributions:
 
-<img src="../results/funding_year_discipline_plot.png" title="Figure 1. Comparison of the distribution of funding sizes 2016-2017 vs 2017-2018" alt="Figure 1. Comparison of the distribution of funding sizes 2016-2017 vs 2017-2018" width="50%" style="display: block; margin: auto;" />
+<img src="../results/funding_year_discipline_plot.svg" title="Figure 1. Comparison of the distribution of funding sizes 2016-2017 vs 2017-2018" alt="Figure 1. Comparison of the distribution of funding sizes 2016-2017 vs 2017-2018" width="50%" style="display: block; margin: auto;" />
 We dropped feature `region` from the original data because there is
 another feature `province` that is indicate of region already. We also
 dropped `organization_name` and `disciplines_other` because the features
@@ -213,7 +213,7 @@ test_f1_weighted
 0.5228910
 </td>
 <td style="text-align:right;">
-0.6280972
+0.6229176
 </td>
 </tr>
 <tr>
@@ -233,7 +233,7 @@ test_recall_weighted
 0.5202511
 </td>
 <td style="text-align:right;">
-0.6289181
+0.6261912
 </td>
 </tr>
 <tr>
@@ -253,7 +253,7 @@ test_precision_weighted
 0.5342833
 </td>
 <td style="text-align:right;">
-0.6356427
+0.6305347
 </td>
 </tr>
 </tbody>
@@ -307,13 +307,13 @@ $12.0-23.0K
 $23.0-50.0K
 </td>
 <td style="text-align:right;">
-0.5797101
+0.5774648
 </td>
 <td style="text-align:right;">
-0.6349206
+0.6507937
 </td>
 <td style="text-align:right;">
-0.6060606
+0.6119403
 </td>
 </tr>
 <tr>
@@ -321,13 +321,13 @@ $23.0-50.0K
 $8.0-12.0K
 </td>
 <td style="text-align:right;">
-0.7368421
+0.6444444
 </td>
 <td style="text-align:right;">
-0.6829268
+0.7073171
 </td>
 <td style="text-align:right;">
-0.7088608
+0.6744186
 </td>
 </tr>
 <tr>
@@ -335,13 +335,13 @@ $8.0-12.0K
 less than $8.0K
 </td>
 <td style="text-align:right;">
-0.7931034
+0.8518519
 </td>
 <td style="text-align:right;">
 0.6969697
 </td>
 <td style="text-align:right;">
-0.7419355
+0.7666667
 </td>
 </tr>
 <tr>
@@ -349,13 +349,13 @@ less than $8.0K
 over $50.0K
 </td>
 <td style="text-align:right;">
-0.8059701
+0.8500000
 </td>
 <td style="text-align:right;">
-0.8307692
+0.7846154
 </td>
 <td style="text-align:right;">
-0.8181818
+0.8160000
 </td>
 </tr>
 <tr>
@@ -363,13 +363,13 @@ over $50.0K
 accuracy
 </td>
 <td style="text-align:right;">
-0.6875000
+0.6838235
 </td>
 <td style="text-align:right;">
-0.6875000
+0.6838235
 </td>
 <td style="text-align:right;">
-0.6875000
+0.6838235
 </td>
 </tr>
 <tr>
@@ -377,13 +377,13 @@ accuracy
 macro avg
 </td>
 <td style="text-align:right;">
-0.7048643
+0.7064913
 </td>
 <td style="text-align:right;">
-0.6891173
+0.6879392
 </td>
 <td style="text-align:right;">
-0.6958710
+0.6946684
 </td>
 </tr>
 <tr>
@@ -391,13 +391,13 @@ macro avg
 weighted avg
 </td>
 <td style="text-align:right;">
-0.6908141
+0.6940158
 </td>
 <td style="text-align:right;">
-0.6875000
+0.6838235
 </td>
 <td style="text-align:right;">
-0.6882829
+0.6869322
 </td>
 </tr>
 </tbody>
@@ -405,8 +405,8 @@ weighted avg
 
 According to Table 3, the test scores are not ideal but our model
 performs reasonably well. We can see a macro average recall score of
-0.69, a weighted-average recall score of 0.69 , a macro average f-1
-score of 0.7 and a weighted-average f-1 score of 0.69. Comparing to our
+0.69, a weighted-average recall score of 0.68 , a macro average f-1
+score of 0.69 and a weighted-average f-1 score of 0.69. Comparing to our
 base case model `dummyclassifer` and our previous models using other
 algorithms, this model has improved significantly. Although not the
 best, the features non-indicative of artistic merit included in our
