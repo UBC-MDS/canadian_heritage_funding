@@ -1,12 +1,8 @@
 # Project: Canadian Heritage Funding
 # Authors: Artan Zandian, Joyce Wang, Amelia Tang, Wenxin Xiang
-# usage:  docker run --rm -p 8888:8888 -v /"$(pwd)"://home//jovyan//work cdn1
+# Usage:  docker run --rm -p 8888:8888 -v /"$(pwd)"://home//jovyan//work image_name
 
-# Copyright (c) Jupyter Development Team.
-# Distributed under the terms of the Modified BSD License.
-ARG OWNER=jupyter
-ARG BASE_CONTAINER=$OWNER/minimal-notebook
-FROM $BASE_CONTAINER
+FROM jupyter/minimal-notebook
 
 USER root
 
@@ -153,4 +149,7 @@ RUN conda install --quiet -y \
 
 # Install dependancy for altair to save png files
 RUN npm install -g vega vega-cli vega-lite canvas
+
+
+# Install R packages
 
