@@ -40,8 +40,7 @@ The final report can be found
 
 ## Usage
 
-To replicate the analysis, create the environment by using
-`environment.yaml`.
+Create the environment by using `environment.yaml`.
 
 `conda env create --file environment.yaml`
 
@@ -61,8 +60,6 @@ not the `arm64` version. See
 [here](https://github.com/mwidjaja1/DSOnMacARM/blob/main/README.md) for
 more info.
 
-OR
-
 To replicate the analysis, clone this Github repository, install the
 dependencies, and run the following commands at the command
 line/terminal from the root directory of the project:
@@ -74,6 +71,21 @@ and report, run the following commands at the command line/terminal from
 the root directory of the project:
 
     make clean
+
+### Replicating the analysis using Docker
+If you would like to replicate the analysis using Docker, pull the docker image
+with the following command:
+
+`docker pull artanzandian/canadian_heritage_funding`
+
+From the root of this project, run the following command to replicate the analysis:
+
+`docker-compose run --rm report-env make -C //home//jovyan//work all`
+
+To reset the project to the original state, and delete all result files and report, 
+run the following command:
+
+`docker-compose run --rm report-env make -C //home//jovyan//work clean`
 
 ## Dependencies
 
