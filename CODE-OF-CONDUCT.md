@@ -44,6 +44,6 @@ The contributor team has the right and responsibility to edit, remove, reject an
 
 #### Contact Information
 
-If you encounter or observe that someone is violating the code of conduct, or have any concern or suggestions, you are welcome to contact a member of our team immediately. We can be reached by contacting UBC MDS program.
+If you encounter or observe that someone is violating the code of conduct, or have any concern or suggestions, you are welcome to contact a member of our team immediately. We can be reached by contacting xiangwx@student.ubc.ca.
 
 This Code of Conduct is adapted from the Contributor Covenant, version 1.3.0, available at http://contributor-covenant.org/version/1/3/0/.
