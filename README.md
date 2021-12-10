@@ -61,11 +61,6 @@ not the `arm64` version. See
 [here](https://github.com/mwidjaja1/DSOnMacARM/blob/main/README.md) for
 more info.
 
-Run the `run_all.sh` at the command line/terminal from the root
-directory of this project with the following command.
-
-`bash run_all.sh`
-
 OR
 
 To replicate the analysis, clone this Github repository, install the
