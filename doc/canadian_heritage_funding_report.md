@@ -263,9 +263,11 @@ test_precision_weighted
 </table>
 
 Therefore, we selected random forest as the best performing model to
-conduct hyperparameter optimization and tuned `max_features`,
-`max_depth" and "class_weight` as well as the `max_features` argument in
-`CountVectorizer()`.
+conduct hyperparameter optimization and tuned `max_features` in
+`CountVectorizer()`, and `max_depth" and "class_weight` as well as the
+`max_features` argument in `RandomForestClassifier()`. The
+`class_weight="balanced"` was used in `RandomForestClassifier()` to
+tackle the class imbalance.
 
 # Results & Discussion
 
