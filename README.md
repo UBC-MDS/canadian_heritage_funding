@@ -40,7 +40,7 @@ The final report can be found
 
 ## Usage
 
-Create the environment by using `environment.yaml`.
+### Creating the environment
 
 `conda env create --file environment.yaml`
 
@@ -60,9 +60,9 @@ not the `arm64` version. See
 [here](https://github.com/mwidjaja1/DSOnMacARM/blob/main/README.md) for
 more info.
 
-To replicate the analysis, clone this Github repository, install the
-dependencies, and run the following commands at the command
-line/terminal from the root directory of the project:
+### To replicate the analysis
+Clone this Github repository, install the dependencies, and run the 
+following commands at the command line/terminal from the root directory of the project:
 
     make all
 
@@ -72,7 +72,16 @@ the root directory of the project:
 
     make clean
 
-### Replicating the analysis using Docker
+## Dependencies
+
+A complete list of dependencies is available
+[here](https://github.com/UBC-MDS/canadian_heritage_funding/blob/main/environment.yaml).
+<br>- Python 3.9.7 and Python packages: <br>- docopt==0.6.1 <br>-
+pandas==1.3.3 <br>- numpy==1.21.2 <br>- altair_saver=0.5.0 <br>-
+altair=4.1.0 <br>- scikit-learn=1.0
+
+
+## Replicating the analysis using Docker
 If you would like to replicate the analysis using Docker, pull the docker image
 with the following command:
 
@@ -87,17 +96,10 @@ run the following command:
 
 `docker-compose run --rm report-env make -C //home//jovyan//work clean`
 
-## Dependencies
-
-A complete list of dependencies is available
-[here](https://github.com/UBC-MDS/canadian_heritage_funding/blob/main/environment.yaml).
-<br>- Python 3.9.7 and Python packages: <br>- docopt==0.6.1 <br>-
-pandas==1.3.3 <br>- numpy==1.21.2 <br>- altair_saver=0.5.0 <br>-
-altair=4.1.0 <br>- scikit-learn=1.0
-
-
 ## Makefile dependency diagram
 ![](Makefile.png)
+
+
 
 ## License
 
