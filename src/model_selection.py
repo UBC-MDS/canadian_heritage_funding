@@ -63,7 +63,7 @@ def main(data, csv_path, model_path):
         columns=["amount_category", "amount_approved", "audiences_none"]
     )
     y_train = train_data["amount_category"]
-    
+
     # # define preprocessor
     preprocessor = preprocess(X_train)
 
@@ -78,7 +78,6 @@ def main(data, csv_path, model_path):
     # # tune and save model
     best_model = tune_model(preprocessor, RandomForestClassifier(), X_train, y_train)
     pickle.dump(best_model, open(model_path, "wb"))
-
 
 
 def preprocess(X_train):
@@ -126,7 +125,7 @@ def preprocess(X_train):
             ),
             categorical_ohe,
         ),
-        (OneHotEncoder(drop="if_binary", handle_unknown="ignore"), binary),
+        (OneHotEncoder(handle_unknown="ignore"), binary),
         (
             OrdinalEncoder(
                 categories=Community_order,

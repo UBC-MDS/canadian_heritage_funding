@@ -1,6 +1,7 @@
 # Project: Canadian Heritage Funding
 # Authors: Artan Zandian, Joyce Wang, Amelia Tang, Wenxin Xiang
-# Usage:  docker run --rm -p 8888:8888 -v /"$(pwd)"://home//jovyan//work image_name
+# Usage:  docker run --rm -p 8888:8888 -v /"$(pwd)"://home//jovyan//work <image_name>
+# Make Usage: docker run --rm -v /"$(pwd)"://home//jovyan//work artanzandian/canadian_heritage_funding make -C //home//jovyan//work all
 
 FROM jupyter/minimal-notebook
 
@@ -210,5 +211,5 @@ RUN conda install --quiet -y \
 RUN npm install -g npm vega vega-cli vega-lite canvas -f
 
 
-# Install R packages
-
+# Install R table graphics for final report
+RUN conda install r-kableextra

@@ -24,7 +24,7 @@ Forest as the best algorithm for our question based on each model’s
 cross-validation scores. We then further conducted hyperparameter
 optimization on the Random Forest model. Our model performs reasonably
 well comparing to the base case `dummyclassifer` with a macro average
-f-1 score of 0.71 and a weighted-average f-1 score of 0.7. However, we
+f-1 score of 0.69 and a weighted-average f-1 score of 0.68. However, we
 also observed that the model performs worse at classifying funding sizes
 in range of `$12.0-23.0K` and `$23.0-50.0K`comparing to classifying
 funding sizes of other ranges. Thus, we suggest further study to improve
@@ -207,16 +207,16 @@ test_f1_weighted
 0.1111819
 </td>
 <td style="text-align:right;">
-0.5744945
+0.5764213
 </td>
 <td style="text-align:right;">
-0.4384143
+0.4533136
 </td>
 <td style="text-align:right;">
-0.5228910
+0.4936329
 </td>
 <td style="text-align:right;">
-0.6259133
+0.6134939
 </td>
 </tr>
 <tr>
@@ -227,16 +227,16 @@ test_recall_weighted
 0.2651968
 </td>
 <td style="text-align:right;">
-0.5736904
+0.5755338
 </td>
 <td style="text-align:right;">
-0.4539382
+0.4659113
 </td>
 <td style="text-align:right;">
-0.5202511
+0.4907580
 </td>
 <td style="text-align:right;">
-0.6289054
+0.6151059
 </td>
 </tr>
 <tr>
@@ -247,16 +247,16 @@ test_precision_weighted
 0.0703360
 </td>
 <td style="text-align:right;">
-0.5791122
+0.5816156
 </td>
 <td style="text-align:right;">
-0.4650749
+0.4782065
 </td>
 <td style="text-align:right;">
-0.5342833
+0.5126008
 </td>
 <td style="text-align:right;">
-0.6323013
+0.6222255
 </td>
 </tr>
 </tbody>
@@ -296,13 +296,13 @@ f1-score
 $12.0-23.0K
 </td>
 <td style="text-align:right;">
-0.6417910
+0.5970149
 </td>
 <td style="text-align:right;">
-0.6142857
+0.5714286
 </td>
 <td style="text-align:right;">
-0.6277372
+0.5839416
 </td>
 </tr>
 <tr>
@@ -310,13 +310,13 @@ $12.0-23.0K
 $23.0-50.0K
 </td>
 <td style="text-align:right;">
-0.6212121
+0.5797101
 </td>
 <td style="text-align:right;">
-0.6507937
+0.6349206
 </td>
 <td style="text-align:right;">
-0.6356589
+0.6060606
 </td>
 </tr>
 <tr>
@@ -324,13 +324,13 @@ $23.0-50.0K
 $8.0-12.0K
 </td>
 <td style="text-align:right;">
-0.6666667
+0.6904762
 </td>
 <td style="text-align:right;">
-0.7317073
+0.7073171
 </td>
 <td style="text-align:right;">
-0.6976744
+0.6987952
 </td>
 </tr>
 <tr>
@@ -338,13 +338,13 @@ $8.0-12.0K
 less than $8.0K
 </td>
 <td style="text-align:right;">
-0.8518519
+0.8148148
 </td>
 <td style="text-align:right;">
-0.6969697
+0.6666667
 </td>
 <td style="text-align:right;">
-0.7666667
+0.7333333
 </td>
 </tr>
 <tr>
@@ -352,13 +352,13 @@ less than $8.0K
 over $50.0K
 </td>
 <td style="text-align:right;">
-0.7910448
+0.8208955
 </td>
 <td style="text-align:right;">
-0.8153846
+0.8461538
 </td>
 <td style="text-align:right;">
-0.8030303
+0.8333333
 </td>
 </tr>
 <tr>
@@ -366,13 +366,13 @@ over $50.0K
 accuracy
 </td>
 <td style="text-align:right;">
-0.6985294
+0.6838235
 </td>
 <td style="text-align:right;">
-0.6985294
+0.6838235
 </td>
 <td style="text-align:right;">
-0.6985294
+0.6838235
 </td>
 </tr>
 <tr>
@@ -380,13 +380,13 @@ accuracy
 macro avg
 </td>
 <td style="text-align:right;">
-0.7145133
+0.7005823
 </td>
 <td style="text-align:right;">
-0.7018282
+0.6852974
 </td>
 <td style="text-align:right;">
-0.7061535
+0.6910928
 </td>
 </tr>
 <tr>
@@ -394,13 +394,13 @@ macro avg
 weighted avg
 </td>
 <td style="text-align:right;">
-0.7019268
+0.6870199
 </td>
 <td style="text-align:right;">
-0.6985294
+0.6838235
 </td>
 <td style="text-align:right;">
-0.6988593
+0.6840993
 </td>
 </tr>
 </tbody>
@@ -408,9 +408,9 @@ weighted avg
 
 According to Table 3, the test scores are not ideal but our model
 performs reasonably well. We can see a macro average recall score of
-0.7, a weighted-average recall score of 0.7 , a macro average f-1 score
-of 0.71 and a weighted-average f-1 score of 0.7. Comparing to our base
-case model `dummyclassifer` and our previous models using other
+0.69, a weighted-average recall score of 0.68 , a macro average f-1
+score of 0.69 and a weighted-average f-1 score of 0.68. Comparing to our
+base case model `dummyclassifer` and our previous models using other
 algorithms, this model has improved significantly. Although not the
 best, the features non-indicative of artistic merit included in our
 study, such as location and discipline, may be used to predict the

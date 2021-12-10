@@ -6,10 +6,10 @@ dependencies:
   - jupyterlab-spellchecker
   - pandas-profiling
   - r-vegalite
-  - python.app
   - altair
   - conda
   - r-knitr
+  - python.app
   - jupyterlab_code_formatter
   - scipy
   - nb_conda_kernels
