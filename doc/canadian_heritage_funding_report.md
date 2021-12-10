@@ -216,7 +216,7 @@ test_f1_weighted
 0.4936329
 </td>
 <td style="text-align:right;">
-0.6134939
+0.6244653
 </td>
 </tr>
 <tr>
@@ -236,7 +236,7 @@ test_recall_weighted
 0.4907580
 </td>
 <td style="text-align:right;">
-0.6151059
+0.6261616
 </td>
 </tr>
 <tr>
@@ -256,7 +256,7 @@ test_precision_weighted
 0.5126008
 </td>
 <td style="text-align:right;">
-0.6222255
+0.6333304
 </td>
 </tr>
 </tbody>
@@ -296,13 +296,13 @@ f1-score
 $12.0-23.0K
 </td>
 <td style="text-align:right;">
-0.5970149
+0.5797101
 </td>
 <td style="text-align:right;">
 0.5714286
 </td>
 <td style="text-align:right;">
-0.5839416
+0.5755396
 </td>
 </tr>
 <tr>
@@ -310,13 +310,13 @@ $12.0-23.0K
 $23.0-50.0K
 </td>
 <td style="text-align:right;">
-0.5797101
+0.6212121
 </td>
 <td style="text-align:right;">
-0.6349206
+0.6507937
 </td>
 <td style="text-align:right;">
-0.6060606
+0.6356589
 </td>
 </tr>
 <tr>
@@ -324,13 +324,13 @@ $23.0-50.0K
 $8.0-12.0K
 </td>
 <td style="text-align:right;">
-0.6904762
+0.6744186
 </td>
 <td style="text-align:right;">
 0.7073171
 </td>
 <td style="text-align:right;">
-0.6987952
+0.6904762
 </td>
 </tr>
 <tr>
@@ -338,13 +338,13 @@ $8.0-12.0K
 less than $8.0K
 </td>
 <td style="text-align:right;">
-0.8148148
+0.7857143
 </td>
 <td style="text-align:right;">
 0.6666667
 </td>
 <td style="text-align:right;">
-0.7333333
+0.7213115
 </td>
 </tr>
 <tr>
@@ -352,13 +352,13 @@ less than $8.0K
 over $50.0K
 </td>
 <td style="text-align:right;">
-0.8208955
+0.8181818
 </td>
 <td style="text-align:right;">
-0.8461538
+0.8307692
 </td>
 <td style="text-align:right;">
-0.8333333
+0.8244275
 </td>
 </tr>
 <tr>
@@ -380,13 +380,13 @@ accuracy
 macro avg
 </td>
 <td style="text-align:right;">
-0.7005823
+0.6958474
 </td>
 <td style="text-align:right;">
-0.6852974
+0.6853950
 </td>
 <td style="text-align:right;">
-0.6910928
+0.6894827
 </td>
 </tr>
 <tr>
@@ -394,13 +394,13 @@ macro avg
 weighted avg
 </td>
 <td style="text-align:right;">
-0.6870199
+0.6855795
 </td>
 <td style="text-align:right;">
 0.6838235
 </td>
 <td style="text-align:right;">
-0.6840993
+0.6839517
 </td>
 </tr>
 </tbody>

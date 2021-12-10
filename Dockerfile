@@ -1,7 +1,8 @@
 # Project: Canadian Heritage Funding
 # Authors: Artan Zandian, Joyce Wang, Amelia Tang, Wenxin Xiang
-# Usage:  docker run --rm -p 8888:8888 -v /"$(pwd)"://home//jovyan//work <image_name>
+# Interactive Usage:  docker run --rm -p 8888:8888 -v /"$(pwd)"://home//jovyan//work <image_name>
 # Make Usage: docker run --rm -v /"$(pwd)"://home//jovyan//work artanzandian/canadian_heritage_funding make -C //home//jovyan//work all
+# Docker-compose Usage: docker-compose run --rm report-env make -C //home//jovyan//work all
 
 FROM jupyter/minimal-notebook
 
