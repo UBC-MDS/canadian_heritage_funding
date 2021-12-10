@@ -88,10 +88,6 @@ A complete list of dependencies is available
 pandas==1.3.3 <br>- numpy==1.21.2 <br>- altair_saver=0.5.0 <br>-
 altair=4.1.0 <br>- scikit-learn=1.0
 
-## Makefile dependency diagram
-![](Makefile.png)
-
-
 ## License
 
 All Open Government data - Canada is made available under the Open
