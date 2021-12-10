@@ -143,12 +143,71 @@ RUN conda install --quiet -y \
     mkl-include=2021.3.0 \
     mypy_extensions=0.4.3 \
     nest-asyncio=1.5.1 \
-    ninja=1.10.2
+    ninja=1.10.2 \
+    nodejs=14.17.4 \
+    numpy=1.21.2 \
+    olefile=0.46 \
+    openjpeg=2.4.0 \
+    openssl=1.1.1l \
+    pandas=1.3.3 \
+    pandoc=2.16.2 \
+    pango=1.48.10 \
+    parso=0.8.2 \
+    pathspec=0.9.0 \
+    pcre=8.45 \
+    pickleshare=0.7.5 \
+    pillow=8.3.2 \
+    pip=21.2.4 \
+    pixman=0.40.0 \
+    platformdirs=2.3.0 \
+    portpicker=1.4.0 \
+    prompt-toolkit=3.0.20 \
+    pthread-stubs=0.4 \
+    py-xgboost=1.4.2 \
+    pycparser=2.20 \
+    pygments=2.10.0 \
+    pyopenssl=21.0.0 \
+    pyparsing=2.4.7 \
+    pyqt=5.12.3 \
+    pyqt-impl=5.12.3 \
+    pyqt5-sip=4.19.18 \
+    pyqtchart=5.12 \
+    pyqtwebengine=5.12.1 \
+    pyrsistent=0.17.3 \
+    pysocks=1.7.1 \
+    python=3.9.7 \
+    python-dateutil=2.8.2 \
+    python-graphviz=0.17 \
+    python_abi \
+    pytz=2021.3 \
+    pyzmq=22.3.0 \
+    qt=5.12.9 \
+    regex=2021.11.10 \
+    requests=2.26.0 \
+    scikit-learn=1.0 \
+    scipy=1.7.1 \
+    selenium=3.141.0 \
+    setuptools=58.2.0 \
+    six=1.16.0 \
+    tbb=2021.3.0 \
+    threadpoolctl=3.0.0 \
+    tk=8.6.11 \
+    tomli=1.2.2 \
+    toolz=0.11.1 \
+    tornado=6.1 \
+    traitlets=5.1.0 \
+    typed-ast=1.5.0 \
+    typing_extensions=3.10.0.2 \
+    tzdata=2021c \
+    urllib3=1.26.7 \
+    wcwidth=0.2.5 \
+    wheel=0.37.0 \
+    xgboost=1.4.2
 
 
 
 # Install dependancy for altair to save png files
-RUN npm install -g vega vega-cli vega-lite canvas
+
 
 
 # Install R packages
