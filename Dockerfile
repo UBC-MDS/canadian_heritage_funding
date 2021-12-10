@@ -207,7 +207,7 @@ RUN conda install --quiet -y \
 
 
 # Install dependancy for altair to save png files
-
+RUN npm install -g npm vega vega-cli vega-lite canvas -f
 
 
 # Install R packages
