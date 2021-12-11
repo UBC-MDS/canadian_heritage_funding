@@ -5,9 +5,9 @@ date: '2021/11/27 (updated: `r Sys.Date()`)'
 output:
   html_document:
     toc: yes
-  pdf_document:
-    toc: yes
   github_document:
+    toc: yes
+  pdf_document:
     toc: yes
 always_allow_html: yes
 bibliography: can_heritage_reference.bib
@@ -67,7 +67,7 @@ The Python programming languages [@Python] and the following Python packages wer
 
 To conduct model selection, we looked at the performance of each model and observed that random forest performs the best: 
 
-```{r model_comparison, message=FALSE, warning=FALSE, echo=FALSE, fig.cap="Table 1. Count of each funding size. Observed class imbalance", out.width = '100%'}
+```{r model_comparison, message=FALSE, warning=FALSE, echo=FALSE, fig.cap="Table 2. Count of each funding size. Observed class imbalance", out.width = '100%'}
 model_comparison <- read_csv("../results/model_comparison.csv") |>
   slice(-c(1,2)) 
 
@@ -78,7 +78,7 @@ model_comparison |>
   kable_styling()
 ```
 
-Therefore, we selected random forest as the best performing model to conduct hyperparameter optimization and tuned `max_features` in `CountVectorizer()`, and `max_depth" and "class_weight` as well as the `max_features` argument in `RandomForestClassifier()`.   
+Therefore, we selected random forest as the best performing model to conduct hyperparameter optimization and tuned `max_features` in `CountVectorizer()`, and `max_depth"` and `"class_weight` as well as the `max_features` argument in `RandomForestClassifier()`. The `class_weight="balanced"` was used in `RandomForestClassifier()` to tackle the class imbalance issue.   
 
 # Results & Discussion
 
