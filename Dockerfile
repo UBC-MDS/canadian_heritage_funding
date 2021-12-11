@@ -24,7 +24,7 @@ USER ${NB_UID}
 # R packages including IRKernel which gets installed globally.
 # r-e1071: dependency of the caret R package
 RUN mamba install --quiet --yes \
-    'r-base' \
+    'r-base=4.1' \
     'r-caret' \
     'r-crayon' \
     'r-devtools' \
@@ -34,6 +34,7 @@ RUN mamba install --quiet --yes \
     'r-htmlwidgets' \
     'r-irkernel' \
     'r-rcurl' \
+    'r-knitr' \
     'r-rodbc' \
     'unixodbc' && \
     mamba clean --all -f -y && \
