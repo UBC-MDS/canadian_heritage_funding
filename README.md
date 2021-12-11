@@ -82,10 +82,7 @@ altair=4.1.0 <br>- scikit-learn=1.0
 
 
 ## Replicating the analysis using Docker
-If you would like to replicate the analysis using Docker, pull the docker image
-with the following command:
-
-`docker pull artanzandian/canadian_heritage_funding`
+If you would like to replicate the analysis using Docker, follow the steps below:
 
 From the root of this project, run the following command to replicate the analysis:
 
