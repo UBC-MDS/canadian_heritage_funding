@@ -24,7 +24,7 @@ Forest as the best algorithm for our question based on each model’s
 cross-validation scores. We then further conducted hyperparameter
 optimization on the Random Forest model. Our model performs reasonably
 well comparing to the base case `dummyclassifer` with a macro average
-f-1 score of 0.67 and a weighted-average f-1 score of 0.66. However, we
+f-1 score of 0.7 and a weighted-average f-1 score of 0.69. However, we
 also observed that the model performs worse at classifying funding sizes
 in range of `$12.0-23.0K` and `$23.0-50.0K`comparing to classifying
 funding sizes of other ranges. Thus, we suggest further study to improve
@@ -77,7 +77,8 @@ continuous. Therefore, we divided the values into five categories:
 8k to 10k in CAD, `$12.0-23.0k` stands for funding size in the range of
 12k to 23k in CAD, `$23.0k-50.0k` stands for funding size in the range
 of 23k to 50k in CAD and `over 50k` stands for funding size larger than
-50k in CAD.
+50k in CAD. We divided them into five categories based on 10%, 25%, 50%
+and 75% percentile of the data in the `amount_approved` column.
 
 We dropped the feature `fiscal_year` because the distributions for arts
 in each discipline across funding sizes stayed the same year over year.
@@ -216,7 +217,7 @@ test_f1_weighted
 0.5228910
 </td>
 <td style="text-align:right;">
-0.6220332
+0.6280972
 </td>
 </tr>
 <tr>
@@ -236,7 +237,7 @@ test_recall_weighted
 0.5202511
 </td>
 <td style="text-align:right;">
-0.6243225
+0.6289181
 </td>
 </tr>
 <tr>
@@ -256,7 +257,7 @@ test_precision_weighted
 0.5342833
 </td>
 <td style="text-align:right;">
-0.6301308
+0.6356427
 </td>
 </tr>
 </tbody>
@@ -264,8 +265,10 @@ test_precision_weighted
 
 Therefore, we selected random forest as the best performing model to
 conduct hyperparameter optimization and tuned `max_features` in
-`CountVectorizer()`, and `max_depth" and "class_weight` as well as the
-`max_features` argument in `RandomForestClassifier()`.
+`CountVectorizer()`, and `max_depth"` and `"class_weight` as well as the
+`max_features` argument in `RandomForestClassifier()`. The
+`class_weight="balanced"` was used in `RandomForestClassifier()` to
+tackle the class imbalance issue.
 
 # Results & Discussion
 
@@ -296,13 +299,13 @@ f1-score
 $12.0-23.0K
 </td>
 <td style="text-align:right;">
-0.5797101
+0.6086957
 </td>
 <td style="text-align:right;">
-0.5714286
+0.6000000
 </td>
 <td style="text-align:right;">
-0.5755396
+0.6043165
 </td>
 </tr>
 <tr>
@@ -310,13 +313,13 @@ $12.0-23.0K
 $23.0-50.0K
 </td>
 <td style="text-align:right;">
-0.5774648
+0.5797101
 </td>
 <td style="text-align:right;">
-0.6507937
+0.6349206
 </td>
 <td style="text-align:right;">
-0.6119403
+0.6060606
 </td>
 </tr>
 <tr>
@@ -324,13 +327,13 @@ $23.0-50.0K
 $8.0-12.0K
 </td>
 <td style="text-align:right;">
-0.6190476
+0.7368421
 </td>
 <td style="text-align:right;">
-0.6341463
+0.6829268
 </td>
 <td style="text-align:right;">
-0.6265060
+0.7088608
 </td>
 </tr>
 <tr>
@@ -338,13 +341,13 @@ $8.0-12.0K
 less than $8.0K
 </td>
 <td style="text-align:right;">
-0.8400000
+0.7931034
 </td>
 <td style="text-align:right;">
-0.6363636
+0.6969697
 </td>
 <td style="text-align:right;">
-0.7241379
+0.7419355
 </td>
 </tr>
 <tr>
@@ -352,13 +355,13 @@ less than $8.0K
 over $50.0K
 </td>
 <td style="text-align:right;">
-0.8000000
+0.8059701
 </td>
 <td style="text-align:right;">
-0.8000000
+0.8307692
 </td>
 <td style="text-align:right;">
-0.8000000
+0.8181818
 </td>
 </tr>
 <tr>
@@ -366,13 +369,13 @@ over $50.0K
 accuracy
 </td>
 <td style="text-align:right;">
-0.6617647
+0.6875000
 </td>
 <td style="text-align:right;">
-0.6617647
+0.6875000
 </td>
 <td style="text-align:right;">
-0.6617647
+0.6875000
 </td>
 </tr>
 <tr>
@@ -380,13 +383,13 @@ accuracy
 macro avg
 </td>
 <td style="text-align:right;">
-0.6832445
+0.7048643
 </td>
 <td style="text-align:right;">
-0.6585464
+0.6891173
 </td>
 <td style="text-align:right;">
-0.6676248
+0.6958710
 </td>
 </tr>
 <tr>
@@ -394,13 +397,13 @@ macro avg
 weighted avg
 </td>
 <td style="text-align:right;">
-0.6693417
+0.6908141
 </td>
 <td style="text-align:right;">
-0.6617647
+0.6875000
 </td>
 <td style="text-align:right;">
-0.6633210
+0.6882829
 </td>
 </tr>
 </tbody>
@@ -408,8 +411,8 @@ weighted avg
 
 According to Table 3, the test scores are not ideal but our model
 performs reasonably well. We can see a macro average recall score of
-0.66, a weighted-average recall score of 0.66 , a macro average f-1
-score of 0.67 and a weighted-average f-1 score of 0.66. Comparing to our
+0.69, a weighted-average recall score of 0.69 , a macro average f-1
+score of 0.7 and a weighted-average f-1 score of 0.69. Comparing to our
 base case model `dummyclassifer` and our previous models using other
 algorithms, this model has improved significantly. Although not the
 best, the features non-indicative of artistic merit included in our
