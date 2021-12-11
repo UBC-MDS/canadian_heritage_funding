@@ -125,7 +125,7 @@ def preprocess(X_train):
             ),
             categorical_ohe,
         ),
-        (OneHotEncoder(handle_unknown="ignore"), binary),
+        (OneHotEncoder(drop="if_binary", handle_unknown="ignore"), binary),
         (
             OrdinalEncoder(
                 categories=Community_order,

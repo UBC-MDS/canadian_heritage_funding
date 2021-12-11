@@ -1,7 +1,7 @@
 Canadian Heritage Funding Size for Art Projects
 ================
 Artan Zandian, Joyce Wang, Amelia Tang, Wenxin Xiang </br>
-2021/11/27 (updated: 2021-12-10)
+2021/11/27 (updated: 2021-12-11)
 
 -   [Summary](#summary)
 -   [Introduction](#introduction)
@@ -24,7 +24,7 @@ Forest as the best algorithm for our question based on each model’s
 cross-validation scores. We then further conducted hyperparameter
 optimization on the Random Forest model. Our model performs reasonably
 well comparing to the base case `dummyclassifer` with a macro average
-f-1 score of 0.69 and a weighted-average f-1 score of 0.68. However, we
+f-1 score of 0.67 and a weighted-average f-1 score of 0.66. However, we
 also observed that the model performs worse at classifying funding sizes
 in range of `$12.0-23.0K` and `$23.0-50.0K`comparing to classifying
 funding sizes of other ranges. Thus, we suggest further study to improve
@@ -207,16 +207,16 @@ test_f1_weighted
 0.1111819
 </td>
 <td style="text-align:right;">
-0.5764213
+0.5744945
 </td>
 <td style="text-align:right;">
-0.4533136
+0.4384143
 </td>
 <td style="text-align:right;">
-0.4936329
+0.5228910
 </td>
 <td style="text-align:right;">
-0.6244653
+0.6220332
 </td>
 </tr>
 <tr>
@@ -227,16 +227,16 @@ test_recall_weighted
 0.2651968
 </td>
 <td style="text-align:right;">
-0.5755338
+0.5736904
 </td>
 <td style="text-align:right;">
-0.4659113
+0.4539382
 </td>
 <td style="text-align:right;">
-0.4907580
+0.5202511
 </td>
 <td style="text-align:right;">
-0.6261616
+0.6243225
 </td>
 </tr>
 <tr>
@@ -247,16 +247,16 @@ test_precision_weighted
 0.0703360
 </td>
 <td style="text-align:right;">
-0.5816156
+0.5791122
 </td>
 <td style="text-align:right;">
-0.4782065
+0.4650749
 </td>
 <td style="text-align:right;">
-0.5126008
+0.5342833
 </td>
 <td style="text-align:right;">
-0.6333304
+0.6301308
 </td>
 </tr>
 </tbody>
@@ -310,13 +310,13 @@ $12.0-23.0K
 $23.0-50.0K
 </td>
 <td style="text-align:right;">
-0.6212121
+0.5774648
 </td>
 <td style="text-align:right;">
 0.6507937
 </td>
 <td style="text-align:right;">
-0.6356589
+0.6119403
 </td>
 </tr>
 <tr>
@@ -324,13 +324,13 @@ $23.0-50.0K
 $8.0-12.0K
 </td>
 <td style="text-align:right;">
-0.6744186
+0.6190476
 </td>
 <td style="text-align:right;">
-0.7073171
+0.6341463
 </td>
 <td style="text-align:right;">
-0.6904762
+0.6265060
 </td>
 </tr>
 <tr>
@@ -338,13 +338,13 @@ $8.0-12.0K
 less than $8.0K
 </td>
 <td style="text-align:right;">
-0.7857143
+0.8400000
 </td>
 <td style="text-align:right;">
-0.6666667
+0.6363636
 </td>
 <td style="text-align:right;">
-0.7213115
+0.7241379
 </td>
 </tr>
 <tr>
@@ -352,13 +352,13 @@ less than $8.0K
 over $50.0K
 </td>
 <td style="text-align:right;">
-0.8181818
+0.8000000
 </td>
 <td style="text-align:right;">
-0.8307692
+0.8000000
 </td>
 <td style="text-align:right;">
-0.8244275
+0.8000000
 </td>
 </tr>
 <tr>
@@ -366,13 +366,13 @@ over $50.0K
 accuracy
 </td>
 <td style="text-align:right;">
-0.6838235
+0.6617647
 </td>
 <td style="text-align:right;">
-0.6838235
+0.6617647
 </td>
 <td style="text-align:right;">
-0.6838235
+0.6617647
 </td>
 </tr>
 <tr>
@@ -380,13 +380,13 @@ accuracy
 macro avg
 </td>
 <td style="text-align:right;">
-0.6958474
+0.6832445
 </td>
 <td style="text-align:right;">
-0.6853950
+0.6585464
 </td>
 <td style="text-align:right;">
-0.6894827
+0.6676248
 </td>
 </tr>
 <tr>
@@ -394,13 +394,13 @@ macro avg
 weighted avg
 </td>
 <td style="text-align:right;">
-0.6855795
+0.6693417
 </td>
 <td style="text-align:right;">
-0.6838235
+0.6617647
 </td>
 <td style="text-align:right;">
-0.6839517
+0.6633210
 </td>
 </tr>
 </tbody>
@@ -408,8 +408,8 @@ weighted avg
 
 According to Table 3, the test scores are not ideal but our model
 performs reasonably well. We can see a macro average recall score of
-0.69, a weighted-average recall score of 0.68 , a macro average f-1
-score of 0.69 and a weighted-average f-1 score of 0.68. Comparing to our
+0.66, a weighted-average recall score of 0.66 , a macro average f-1
+score of 0.67 and a weighted-average f-1 score of 0.66. Comparing to our
 base case model `dummyclassifer` and our previous models using other
 algorithms, this model has improved significantly. Although not the
 best, the features non-indicative of artistic merit included in our
